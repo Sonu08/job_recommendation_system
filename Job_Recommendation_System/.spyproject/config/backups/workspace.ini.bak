@@ -1,0 +1,12 @@
+[workspace]
+restore_data_on_startup = True
+save_data_on_exit = True
+save_history = True
+save_non_project_files = False
+project_type = 'empty-project-type'
+recent_files = ['..\\..\\..\\Data-Engineering-Dev\\data_engineering_services\\app.py', '..\\..\\..\\Data-Engineering-Dev\\data_engineering_services\\investors.py', '..\\..\\..\\Data-Engineering-Dev\\data_engineering_services\\config.py', '..\\..\\..\\Data-Engineering-Dev\\data_engineering_services\\projects.py', '..\\..\\..\\Data-Engineering-Dev\\data_engineering_services\\utils.py']
+
+[main]
+version = 0.2.0
+recent_files = []
+
