@@ -11,6 +11,7 @@ for v in job_list:
         new_job_list.append(v)
     
 lo_list = jobs['Location_Interest'].values
+student_list = jobs['Name'].values
 
 def recommend(indus, job, lo):
     indus_index = jobs[jobs['Industry_Interest']== indus].index[0]
@@ -41,6 +42,12 @@ st.header('Job Recommender System')
 #lo = pickle.load(open('job/location_list.pkl','rb'))
 similarity = pickle.load(open('similarity.pkl','rb'))
 
+#student = st.text_input('Enter Your Name: ', student_list)
+selected_student = st.selectbox(
+    "Type or select a Student Name from the dropdown",
+    student_list
+)
+
 #indus_list = new_job['Industry_Interest'].values
 selected_indus = st.selectbox(
     "Type or select an Industry Interest from the dropdown",
@@ -61,16 +68,20 @@ selected_location = st.selectbox(
 
 
 if st.button('Show Recommendation'):
+    #print("Showing Recommendations for: ",student)
     recommended_job = recommend(selected_indus, selected_job, selected_location)
-    col1, col2, col3, col4, col5 = st.columns(5)
+    col1, col2, col3, col4, col5, col6 = st.columns(6)
     with col1:
-        st.text(recommended_job[0])
+        st.write('Showing recommendations for', selected_student)    
     with col2:
-        st.text(recommended_job[1])
+        st.text(recommended_job[0])
     with col3:
-        st.text(recommended_job[2])
+        st.text(recommended_job[1])
     with col4:
-        st.text(recommended_job[3])
+        st.text(recommended_job[2])
     with col5:
+        st.text(recommended_job[3])
+    with col6:
         st.text(recommended_job[4])
+
 
